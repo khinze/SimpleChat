@@ -1,0 +1,27 @@
+<form role="form" class="form-horizontal" name="subscribeUserForm" >
+	<fieldset>
+		<div class="form-group" ng-class="{ 'has-error': subscribeUserForm.nickName.$dirty && subscribeUserForm.nickName.$invalid}">
+		    <label for="nickName" class="col-sm-2 control-label">Nick Name</label>
+		        <div class="col-sm-10">
+			        <input class="form-control" 
+				             name="nickName" 
+				             ng-model="NickName" 
+				             type="text" 
+				             autofocus 
+				             required>
+			    <div ng-show="subscribeUserForm.nickName.$dirty && subscribeUserForm.nickName.$invalid" class="text-danger">
+			       <span ng-show="subscribeUserForm.nickName.$error.required" >Please provide a nick name.</span>
+			    </div>
+		    </div>
+		</div>
+  		<div lass="form-group">
+		    <label for="surname" class="col-sm-2 control-label"></label>
+			<div class="col-sm-10">
+		     	<input type="button" 
+		     	ng-disabled="subscribeUserForm.$invalid" 
+		     	class="btn btn-lg btn-success btn-block" 
+		     	value="Login" ng-click="SubscribeUser()" />
+		    </div>
+		</div>
+	</fieldset>
+</form>

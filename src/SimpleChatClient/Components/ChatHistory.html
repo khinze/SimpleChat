@@ -1,0 +1,10 @@
+<div class="panel panel-default" ng-show="IsAnyChatsAvailable()">
+  <div class="panel-heading">Chatting with {{user.NickName}}</div>
+  <div class="panel-body">
+    <div ng-repeat="chat in chats">
+    	<div ng-show="DisplayChat(chat)">
+    		<strong>{{chat.FromNickName}} at {{chat.Created  | date:'medium'}}:</strong><p>{{chat.Message}}</p>
+    	</div>
+    </div>
+  </div>
+</div>

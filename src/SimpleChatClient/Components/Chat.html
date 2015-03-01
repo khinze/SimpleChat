@@ -1,0 +1,14 @@
+<div class="row">
+	<div class="col-md-2">
+		<users></users>
+	</div>
+	<div class="col-md-10" ng-show="AreUsersPresent">
+		<user-chat user="SelectedUser"></user-chat>
+		<hr />
+		<chat-history user="SelectedUser" chats="Chats"></chat-history>
+	</div>
+	<div class="col-md-10" ng-hide="AreUsersPresent">
+		<div class="alert alert-warning" role="alert">You are currently the only user online. You will be able to chat once the first user comes online.</div>
+	</div>
+</div>
+

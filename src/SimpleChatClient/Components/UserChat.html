@@ -1,0 +1,35 @@
+<div class="panel panel-default">
+  <div class="panel-heading">{{user.NickName}}</div>
+  <div class="panel-body">
+   		<form role="form" class="form-horizontal" name="userChatForm" >
+			<fieldset>
+				<div class="form-group" ng-class="{ 'has-error': userChatForm.message.$dirty && userChatForm.nickName.$invalid}">
+				    <label for="message" class="col-sm-2 control-label">Messsge</label>
+				        <div class="col-sm-10">
+				        	<textarea class="form-control" 
+				        	  	      name="message" 
+						              ng-model="Message" 
+				        			  rows="3"
+				        			  autofocus
+				        			  required>
+				        	</textarea>
+					    <div ng-show="userChatForm.message.$dirty && userChatForm.message.$invalid" class="text-danger">
+					       <span ng-show="userChatForm.message.$error.required" >Please provide a nick name.</span>
+					    </div>
+				    </div>
+				</div>
+		  		<div lass="form-group">
+				    <label for="surname" class="col-sm-2 control-label"></label>
+					<div class="col-sm-10">
+				     	<input type="button" 
+				     	ng-disabled="userChatForm.$invalid" 
+				     	class="btn btn-lg btn-primary btn-block" 
+				     	value="Send" ng-click="SendMessageToUser()" />
+				    </div>
+				</div>
+			</fieldset>
+		</form>
+  </div>
+</div>
+
+
